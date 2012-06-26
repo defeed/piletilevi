@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>Piletilevi muusika üritused</title>
+  <link rel="stylesheet"
+  href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap-combined.min.css">
+</head>
+<body>
+  <div class="span12">
+		<h1>Tulevad Rock ja Pop üritused</h1>
+		<table class="table table-striped">
+		  <thead>
+		    <tr>
+		      <th>Üritus</th>
+		      <th>Kuupäev</th>
+		      <th>Koht</th>
+		      <th>Hind</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  <% @shows.each do |show| %>
+				<tr>
+					<td>
+						<a href="<%= show.at_css('.eventslist_item_title')[:href] %>">
+							<%= show.at_css('.eventslist_item_title span').text.strip %>
+						</a>
+					</td>
+					<td><%= show.at_css('.eventslist_item_date').text.gsub(/\s+/, " ") %></td>
+					<td>
+						<%= show.at_css('.eventslist_item_place').text.strip %> (<%= show.at_css('.eventslist_item_country').text.strip %>)
+					</td>
+					<td><%= show.at_css('.eventslist_item_price_primary').text.strip %></td>
+				</tr>
+		  <% end %>
+		  </tbody>
+		</table>
+    </div>
+</body>
+</html>
