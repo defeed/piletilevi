@@ -22,9 +22,7 @@
 		  <% @shows.each do |show| %>
 				<tr>
 					<td>
-						<a href="<%= show.at_css('.eventslist_item_title')[:href] %>">
-							<%= show.at_css('.eventslist_item_title span').text.strip %>
-						</a>
+						<a href="<%= show.at_css('.eventslist_item_title')[:href] %>"><%= show.at_css('.eventslist_item_title span').text.strip %></a>
 					</td>
 					<td><%= show.at_css('.eventslist_item_date').text.strip.gsub(/\s+/, " ") %></td>
 					<td><%= show.at_css('.eventslist_item_place').text.strip.gsub(/\s+/, " ") %> (<%= show.at_css('.eventslist_item_country').text.strip.gsub(/\s+/, " ") %>)</td>

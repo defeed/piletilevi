@@ -15,5 +15,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   nokogiri (= 1.5.5)
+=======
+  nokogiri
+>>>>>>> bca77ca64a175cd14ae3ef49663088ba154d26a6
   sinatra
