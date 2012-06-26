@@ -26,7 +26,7 @@
 							<%= show.at_css('.eventslist_item_title span').text.strip %>
 						</a>
 					</td>
-					<td><%= show.at_css('.eventslist_item_date').text.gsub(/\s+/, " ") %></td>
+					<td><%= show.at_css('.eventslist_item_date').text.strip %></td>
 					<td>
 						<%= show.at_css('.eventslist_item_place').text.strip %> (<%= show.at_css('.eventslist_item_country').text.strip %>)
 					</td>
